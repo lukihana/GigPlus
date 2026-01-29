@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig Plus Company - System Integration Specialists</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Sarabun', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.1); }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.3); border-radius: 10px; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        /* Smooth Scroll Behavior */
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="text-slate-900 bg-slate-50 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- LOGO: Using PNG as requested -->
+                <img src="logo.png" alt="Gig Plus Logo" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('backup-logo-text').style.display='block';">
+                <!-- Backup Text if image missing -->
+                <span id="backup-logo-text" class="text-2xl font-bold text-slate-900 hidden">Gig Plus</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">เกี่ยวกับเรา</a>
+                <a href="#services" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">บริการ</a>
+                <a href="#ai-demo" class="flex items-center gap-1 text-indigo-600 font-semibold bg-indigo-50 px-3 py-1 rounded-full hover:bg-indigo-100 transition-colors">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> AI Demo
+                </a>
+                <a href="#process" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">การทำงาน</a>
+                <a href="#contact" class="px-6 py-2 rounded-lg font-medium bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                    ติดต่อเรา
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-800">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-6 shadow-xl absolute w-full flex flex-col gap-4 top-full left-0">
+            <a href="#about" class="text-left font-medium text-slate-700 py-2 mobile-link">เกี่ยวกับเรา</a>
+            <a href="#services" class="text-left font-medium text-slate-700 py-2 mobile-link">บริการ</a>
+            <a href="#ai-demo" class="text-left font-medium text-indigo-600 py-2 flex items-center gap-2 mobile-link"><i data-lucide="sparkles" class="w-4 h-4"></i> ลองใช้ AI</a>
+            <a href="#process" class="text-left font-medium text-slate-700 py-2 mobile-link">การทำงาน</a>
+            <a href="#contact" class="text-left font-medium text-blue-600 py-2 mobile-link">ติดต่อเรา</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-white">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
+                    System Integration Specialists
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">
+                    เชื่อมต่อธุรกิจให้ไร้รอยต่อด้วย <br class="hidden md:block" />
+                    <span class="text-blue-600">Technology & Automation</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+                    Gig Plus Company เชี่ยวชาญด้านการเชื่อมต่อระบบ (Connectivity) 
+                    ด้วยการใช้ n8n Workflow และ Custom Development เพื่อให้ข้อมูลของคุณไหลลื่น แม่นยำ และรวดเร็ว
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="px-6 py-3 rounded-lg font-medium bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        ปรึกษาโซลูชันของคุณ <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#ai-demo" class="px-6 py-3 rounded-lg font-medium border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i> ลองให้ AI ออกแบบ Workflow
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Abstract Background Shapes -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-200/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-cyan-200/20 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- About / Expertise Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <div class="bg-slate-900 rounded-2xl p-8 text-white relative z-10 shadow-2xl">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="font-mono text-sm text-green-400 mb-2">// Status: Connected</div>
+                            <div class="font-mono text-sm text-slate-300 leading-relaxed">
+                                > Connecting CRM to ERP... Success<br/>
+                                > Transforming JSON Data... Done<br/>
+                                > n8n Workflow Triggered... Active<br/>
+                                > API Response: 200 OK
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-full h-full bg-blue-100 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="mb-12 text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">ความเชี่ยวชาญของเรา</h2>
+                        <div class="h-1.5 w-20 bg-blue-600 rounded-full mb-6"></div>
+                        <p class="text-lg text-slate-600">เราไม่ได้แค่ทำระบบ แต่เราสร้าง 'Ecosystem' ที่ซอฟต์แวร์ทุกตัวคุยกันรู้เรื่อง</p>
+                    </div>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        ในยุคที่ธุรกิจใช้แอปพลิเคชันหลากหลาย ปัญหา "ข้อมูลไม่เชื่อมต่อกัน" (Silo Data) คืออุปสรรคสำคัญ Gig Plus เข้ามาแก้ปัญหานี้ด้วยเทคโนโลยีการเชื่อมต่อ (Integration) ที่ทันสมัย
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+                        <div class="flex gap-4">
+                            <i data-lucide="zap" class="w-6 h-6 text-yellow-500 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Speed</h4>
+                                <p class="text-sm text-slate-500">ลดเวลาการทำงานซ้ำซาก</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="database" class="w-6 h-6 text-blue-500 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Accuracy</h4>
+                                <p class="text-sm text-slate-500">ข้อมูลแม่นยำ ไม่ตกหล่น</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">บริการหลักของเรา</h2>
+                <div class="h-1.5 w-20 bg-blue-600 rounded-full mb-6 mx-auto"></div>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">เราโฟกัสเฉพาะสิ่งที่เราเชี่ยวชาญที่สุด เพื่อผลลัพธ์ที่ดีที่สุดสำหรับธุรกิจคุณ</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow border border-slate-100 h-full flex flex-col">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600">
+                        <i data-lucide="layers" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Workflow Automation with n8n</h3>
+                    <p class="text-slate-600 mb-6 flex-grow leading-relaxed">
+                        เปลี่ยนงาน Manual ให้เป็นระบบอัตโนมัติด้วย n8n เครื่องมือ Workflow Automation ระดับสูง เชื่อมต่อแอปพลิเคชันของคุณเข้าด้วยกันอย่างไร้รอยต่อ
+                    </p>
+                    <ul class="space-y-3 pt-6 border-t border-slate-100">
+                        <li class="flex items-start gap-3 text-slate-700 text-sm">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mt-0.5"></i> ออกแบบ Workflow การทำงานที่ซับซ้อน
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-700 text-sm">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mt-0.5"></i> เชื่อมต่อ CRM, ERP, Google Sheets และ Database
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-700 text-sm">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mt-0.5"></i> แจ้งเตือน (Notification) ผ่าน Line, Email, Slack
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow border border-slate-100 h-full flex flex-col">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 text-blue-600">
+                        <i data-lucide="code" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Custom Integration Development</h3>
+                    <p class="text-slate-600 mb-6 flex-grow leading-relaxed">
+                        เมื่อเครื่องมือสำเร็จรูปไม่ตอบโจทย์ เราพร้อมเขียนโค้ดเพื่อพัฒนาระบบเชื่อมต่อเฉพาะทาง (Connector/Middleware) สำหรับธุรกิจคุณโดยเฉพาะ
+                    </p>
+                    <ul class="space-y-3 pt-6 border-t border-slate-100">
+                        <li class="flex items-start gap-3 text-slate-700 text-sm">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mt-0.5"></i> พัฒนา API Gateway และ Middleware
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-700 text-sm">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mt-0.5"></i> เขียน Script แปลงข้อมูล (Data Transformation)
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-700 text-sm">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500 mt-0.5"></i> เชื่อมต่อระบบ Legacy เก่าเข้ากับระบบใหม่
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Demo Section -->
+    <section id="ai-demo" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden text-white border border-indigo-700/50">
+                <!-- Decoration -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl -mr-16 -mt-16"></div>
+                
+                <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/20 rounded-full text-indigo-300 font-medium text-sm mb-6 border border-indigo-500/30">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Powered by Gemini AI</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4">AI Solution Architect ✨</h3>
+                        <p class="text-indigo-200 mb-8 leading-relaxed">
+                            ลองเล่าปัญหาการทำงานที่คุณเจอ (เช่น "ต้องดึงข้อมูลจาก Email มาใส่ Excel เองทุกวัน") 
+                            ให้ AI ของเราช่วยออกแบบ Workflow อัตโนมัติเบื้องต้นให้คุณ **ฟรี!**
+                        </p>
+            
+                        <div class="space-y-4">
+                            <textarea id="ai-input" 
+                                placeholder="พิมพ์ปัญหาของคุณที่นี่... (เช่น เสียเวลาทำรายงานสรุปยอดขายทุกสิ้นเดือน)"
+                                class="w-full bg-slate-800/50 border border-slate-700 rounded-xl p-4 text-white placeholder-slate-400 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all resize-none h-32"></textarea>
+                            
+                            <button onclick="generateSolution()" id="generate-btn" 
+                                class="w-full md:w-auto px-6 py-3 rounded-lg font-medium bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-indigo-500/30 hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                                <i data-lucide="bot" class="w-5 h-5"></i> <span id="btn-text">ออกแบบ Workflow</span>
+                            </button>
+                            <p id="error-msg" class="text-red-400 text-sm hidden"></p>
+                        </div>
+                    </div>
+            
+                    <div class="bg-slate-800/80 rounded-xl p-6 border border-slate-700 min-h-[300px] flex flex-col">
+                        <h4 class="text-indigo-300 font-semibold mb-4 flex items-center gap-2">
+                            <i data-lucide="cpu" class="w-4 h-4"></i> ผลการวิเคราะห์ (Solution Idea)
+                        </h4>
+                        
+                        <div class="flex-grow overflow-y-auto max-h-[400px] pr-2 custom-scrollbar">
+                            <div id="result-area" class="text-slate-200 whitespace-pre-line leading-relaxed text-sm">
+                                <div class="flex flex-col items-center justify-center h-48 text-slate-500 space-y-3">
+                                    <i data-lucide="layers" class="w-12 h-12 opacity-20"></i>
+                                    <p>รอข้อมูลจากคุณ...</p>
+                                    <p class="text-xs opacity-50">AI จะประเมินแนวทางที่เหมาะสมกับธุรกิจคุณ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-12 bg-slate-900 text-white overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-slate-400 mb-6 text-sm uppercase tracking-wider">Technologies We Master</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 font-bold text-2xl md:text-3xl text-slate-300">
+                <span>n8n</span>
+                <span>Node.js</span>
+                <span>REST API</span>
+                <span>Python</span>
+                <span>PostgreSQL</span>
+                <span>Webhook</span>
+                <span>JSON</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-blue-600 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                <div class="p-10 md:w-1/2 text-white flex flex-col justify-center">
+                    <h3 class="text-3xl font-bold mb-4">พร้อมยกระดับ Workflow ของคุณหรือยัง?</h3>
+                    <p class="text-blue-100 mb-8">
+                        อย่าปล่อยให้ข้อมูลที่กระจัดกระจายชะลอการเติบโตของคุณ ปรึกษาเราเพื่อออกแบบระบบการทำงานอัตโนมัติวันนี้
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-200"></i>
+                            <span>contact@gigplus.co.th</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-200"></i>
+                            <span>02-XXX-XXXX</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-blue-200"></i>
+                            <span>Bangkok, Thailand</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-10 md:w-1/2 bg-white">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); alert('ขอบคุณที่ติดต่อเรา! เราจะรีบติดต่อกลับโดยเร็วที่สุด');">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">ชื่อของคุณ</label>
+                            <input type="text" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="คุณสมชาย...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">อีเมล</label>
+                            <input type="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="name@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">บริการที่สนใจ</label>
+                            <select class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                                <option>n8n Automation</option>
+                                <option>Custom Development</option>
+                                <option>ปรึกษาทั่วไป</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">ข้อความ</label>
+                            <textarea rows="3" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="เล่าปัญหาที่คุณพบเจอ..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-6 py-3 rounded-lg font-medium bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                            ส่งข้อความ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="flex items-center gap-2 justify-center md:justify-start mb-2">
+                    <div class="bg-white/10 p-2 rounded-lg backdrop-blur-sm">
+                        <!-- Tiny Footer Logo -->
+                        <img src="logo.png" alt="Gig Plus" class="h-8 w-auto object-contain">
+                    </div>
+                </div>
+                <p class="text-sm mt-4">Connecting Possibilities, Automating Success.</p>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:text-white transition-colors">Services</a>
+                <a href="#" class="hover:text-white transition-colors">About Us</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            </div>
+            <div class="text-sm">
+                &copy; <?php echo date("Y"); ?> Gig Plus Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Initialize Icons
+        lucide.createIcons();
+
+        // 2. Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-5');
+            } else {
+                navbar.classList.add('bg-transparent', 'py-5');
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-md', 'py-3');
+            }
+        });
+
+        // 3. Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // 4. AI Generator Logic
+        async function generateSolution() {
+            const input = document.getElementById('ai-input').value;
+            const resultArea = document.getElementById('result-area');
+            const btn = document.getElementById('generate-btn');
+            const btnText = document.getElementById('btn-text');
+            const errorMsg = document.getElementById('error-msg');
+
+            if (!input.trim()) return;
+
+            // UI Loading State
+            btn.disabled = true;
+            btnText.innerText = "กำลังวิเคราะห์...";
+            errorMsg.classList.add('hidden');
+            resultArea.innerHTML = '<div class="flex justify-center items-center h-48"><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div></div>';
+
+            try {
+                // IMPORTANT: In a real PHP App, you should move this API call to a separate PHP file (e.g., api_proxy.php)
+                // to hide your API Key from the client source code.
+                const apiKey = ""; // ⚠️ ใส่ Gemini API Key ตรงนี้
+                
+                const prompt = `
+                    คุณคือ AI Solution Architect ผู้เชี่ยวชาญของบริษัท Gig Plus Company (ผู้เชี่ยวชาญด้าน n8n และ Custom Integration)
+                    โจทย์จากลูกค้า: "${input}"
+                    กรุณาวิเคราะห์และแนะนำโซลูชันทางเทคนิคสั้นๆ (ภาษาไทย) โดยแบ่งเป็น:
+                    1. 🔍 วิเคราะห์ปัญหา (Problem Analysis)
+                    2. 🛠️ เครื่องมือที่แนะนำ (Suggested Tools: เน้น n8n, Node.js หรือ Database)
+                    3. 🚀 ขั้นตอนการทำงาน (Workflow Logic)
+                    ตอบให้กระชับ ดูเป็นมืออาชีพ และเชิญชวนให้ติดต่อบริษัทเพื่อลงรายละเอียด
+                `;
+
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                    }
+                );
+
+                const data = await response.json();
+                
+                if (data.error) throw new Error(data.error.message);
+
+                const generatedText = data.candidates?.[0]?.content?.parts?.[0]?.text || "ไม่สามารถสร้างคำตอบได้";
+                
+                // Render Result
+                resultArea.innerHTML = `<div class="prose prose-invert max-w-none text-sm">${generatedText.replace(/\n/g, '<br>')}</div>`;
+
+            } catch (err) {
+                console.error(err);
+                errorMsg.innerText = "เกิดข้อผิดพลาด: " + err.message;
+                errorMsg.classList.remove('hidden');
+                resultArea.innerHTML = '<div class="text-center text-slate-500 mt-10">เกิดข้อผิดพลาด กรุณาลองใหม่</div>';
+            } finally {
+                btn.disabled = false;
+                btnText.innerText = "ออกแบบ Workflow";
+            }
+        }
+    </script>
+</body>
+</html>
